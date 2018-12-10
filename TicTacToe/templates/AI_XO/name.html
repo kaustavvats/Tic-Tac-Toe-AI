@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Tic-Tac-Toe | Enter Name</title>
+{% endblock %}
+
+{% block body %}
+    <form class="post-form" role="form" autocomplete="off" action="{%url 'name'%}" method="POST">
+        {% csrf_token %}
+        <label>Enter your nick: </label>
+        <input type="text" class="form-control" name="nick" id="nick" value="">
+        <br>
+        <button type="submit">Let's Play!</button>
+    </form>
+{% endblock %}
